@@ -34,6 +34,21 @@ function urnaEletronica() {
         default:
         return;
 
-        let
+        
+        //console.log('apresente a quantidade e percentual de votos válidos do candidato 1');
+        //console.log('apresente a quantidade e percentual de votos válidos do candidato 2');
+        //console.log('apresente a quantidade e percentual de votos válidos do candidato 3');
+        //console.log('apresente a quantidade e percentual de votos brancos');
+        //console.log('apresente a quantidade e percentual de votos nulos');
+        
+        
+        //console.log('quantidade de votos válidos do Candidato 1: ' + TotaldeVotosCandidato1);
+        //console.log('quantidade de votos válidos do Candidato 2: ' + TotaldeVotosCandidato2);
+        //console.log('quantidade de votos válidos do Candidato 3: ' + TotaldeVotosCandidato3);
+        //console.log('quantidade de votos em Branco: ' + TotaldeVotosBrancos);
+        //console.log('quantidade de votos Nulos: ' + TotaldeVotosNulos);
+
 }
+
+    
 }
