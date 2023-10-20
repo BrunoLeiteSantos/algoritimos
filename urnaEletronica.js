@@ -5,7 +5,6 @@ function urnaEletronica() {
     let VotosCandidato2 = 0;
     let VotosCandidato3 = 0;
     let VotosBrancos = 0;
-    let VotosNulos = 0;
     let TotalVotos = 0;
     let NomeGanhador;
     let VotosGanhador;
@@ -15,6 +14,13 @@ function urnaEletronica() {
     let nomeCandidato3;
     let encerrarVotacao = '';
     let senhaMesario;
+    let votoInvalido;
+
+    //let OpçãodeVoto1;
+    //let OpçãodeVoto2;
+    //let OpçãodeVoto3;
+    //let OpçãodeVoto5;
+    //let OpçãodeVotoInvalida;
 
     console.log('Inicio do Programa');
 
@@ -24,6 +30,14 @@ function urnaEletronica() {
     nomeCandidato2 = prompt('Digite o nome do candidato 2:');
     nomeCandidato3 = prompt('Digite o nome do candidato 3:');
 
+    //confirm()
+    //OpçãodeVoto1 = prompt('Deigite a opção 1');
+    //OpçãodeVoto2 =
+    //OpçãodeVoto3 =
+    //OpçãodeVoto5 =
+    //OpçãodeVotoInvalida = prompt ('Qualquer voto digitado que esteja fora das opções sera desconsiderado');
+
+
     do{
 
         console.clear();
@@ -31,9 +45,10 @@ function urnaEletronica() {
         console.log('[2] Candidato 2: ' + nomeCandidato2);
         console.log('[3] Candidato 3: ' + nomeCandidato3);
         console.log('[5] Voto em branco');
-        console.log('[8] Voto nulo');
 
         voto = parseInt(prompt('Digite sua opção de voto'));
+
+        totalVotos++;
 
         switch (voto) {
         case 1:
@@ -53,24 +68,26 @@ function urnaEletronica() {
                 console.log('Um voto Branco recebido');
                 break;
             case 8:
-                VotosNulos++;
-                console.log('Um voto Nulo recebido');
-                break;
               prompt('Deseja REALMENTE encerrar a votação?');
         default:
         return;
-
+        }
         } while (voto !== 0);
     
 
-        console.clear()
-        console.log('** BOLETIM DE URNA - RESULTADOS **');
-        console.log('Total de votos: ' + totalVotos);
-        console.log('Total de votos do candidato 1: ' + votosCandidato1 + ' voto(s) (' + (votosCandidato1 / totalVotos * 100) + '%)');
-        console.log('Total de votos do candidato 2: ' + votosCandidato2 + ' voto(s) (' + (votosCandidato2 / totalVotos * 100) + '%)');
-        console.log('Total de votos do candidato 3: ' + votosCandidato3 + ' voto(s) (' + (votosCandidato3 / totalVotos * 100) + '%)');
-        console.log('Total de votos brancos: ' + votosBrancos+ ' voto(s) (' + (votosBrancos/ totalVotos * 100) + '%)');
-        console.log('Total de votos nulos: ' + votosNulos + ' voto(s) (' + (votosNulos / totalVotos * 100) + '%)');
+    console.clear();
+    console.log('** BOLETIM DE URNA - RESULTADOS **');
+    console.log('Total de votos: ' + totalVotos);
+    console.log('Total de votos do(a) candidato(a) ' + nomeCandidato1 + ': ' + votosCandidato1 + ' voto(s) (' + (votosCandidato1 / totalVotos * 100) + '%)');
+    console.log('Total de votos do(a) candidato(a) ' + nomeCandidato2 + ': ' + votosCandidato2 + ' voto(s) (' + (votosCandidato2 / totalVotos * 100) + '%)');
+    console.log('Total de votos do(a) candidato(a) ' + nomeCandidato3 + ': ' + votosCandidato3 + ' voto(s) (' + (votosCandidato3 / totalVotos * 100) + '%)');
+    console.log('Total de votos brancos: ' + votosBrancos+ ' voto(s) (' + (votosBrancos/ totalVotos * 100) + '%)');
+    console.log('Total de votos nulos: ' + votosNulos + ' voto(s) (' + (votosNulos / totalVotos * 100) + '%)');
+    console.log('Total de votos do(a) candidato(a) ' + nomeCandidato1 + ': ' + votosCandidato1 + ' voto(s) (' + (votosCandidato1 / totalVotos * 100).toFixed(2) + '%)');
+    console.log('Total de votos do(a) candidato(a) ' + nomeCandidato2 + ': ' + votosCandidato2 + ' voto(s) (' + (votosCandidato2 / totalVotos * 100).toFixed(2) + '%)');
+    console.log('Total de votos do(a) candidato(a) ' + nomeCandidato3 + ': ' + votosCandidato3 + ' voto(s) (' + (votosCandidato3 / totalVotos * 100).toFixed(2) + '%)');
+    console.log('Total de votos brancos: ' + votosBrancos+ ' voto(s) (' + (votosBrancos/ totalVotos * 100).toFixed(2) + '%)');
+
 
 
     //Determine Ganhador
@@ -96,6 +113,6 @@ function urnaEletronica() {
         console.log('Não houve ganhador nesta urna (empate entre dois ou mais candidatos).');
     }
 
-    }
+    
 
 }
