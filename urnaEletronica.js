@@ -5,9 +5,9 @@ function urnaEletronica() {
     let VotosCandidato2 = 0;
     let VotosCandidato3 = 0;
     let VotosBrancos = 0;
-    let TotalVotos = 0;
-    let NomeGanhador;
-    let VotosGanhador;
+    let totalVotos = 0;
+    let nomeGanhador;
+    let votosGanhador;
     let ganhador = true
     let nomeCandidato1;
     let nomeCandidato2;
@@ -16,11 +16,13 @@ function urnaEletronica() {
     let senhaMesario;
     let votoInvalido;
 
-    //let OpçãodeVoto1;
-    //let OpçãodeVoto2;
-    //let OpçãodeVoto3;
-    //let OpçãodeVoto5;
-    //let OpçãodeVotoInvalida;
+
+    let MensagemdeConfirmação;
+    let opcaoDeVoto1;
+    let OpçãodeVoto2;
+    let OpçãodeVoto3;
+    let OpçãodeVoto5;
+    let OpçãodeVotoInvalida;
 
     console.log('Inicio do Programa');
 
@@ -29,14 +31,6 @@ function urnaEletronica() {
     nomeCandidato1 = prompt('Digite o nome do candidato 1:');
     nomeCandidato2 = prompt('Digite o nome do candidato 2:');
     nomeCandidato3 = prompt('Digite o nome do candidato 3:');
-
-    //confirm()
-    //OpçãodeVoto1 = prompt('Deigite a opção 1');
-    //OpçãodeVoto2 =
-    //OpçãodeVoto3 =
-    //OpçãodeVoto5 =
-    //OpçãodeVotoInvalida = prompt ('Qualquer voto digitado que esteja fora das opções sera desconsiderado');
-
 
     do{
 
@@ -54,18 +48,22 @@ function urnaEletronica() {
         case 1:
                 VotosCandidato1++;
                 console.log('O Candidato 1 recebeu um voto');
+                MensagemdeConfirmação = confirm ('Deseja realmente votar neste individuo?');
                 break;
             case 2:
                 VotosCandidato2 ++;
                 console.log('O Candidato 2 recebeu um voto');
+                MensagemdeConfirmação = confirm ('Deseja realmente votar neste individuo?');
                 break;
             case 3:
                VotosCandidato3++;
                 console.log('O Candidato 3 recebeu um voto');
+                MensagemdeConfirmação = confirm ('Deseja realmente votar neste individuo?');
                 break;
            case 5:
                 VotosBrancos++;
                 console.log('Um voto Branco recebido');
+                MensagemdeConfirmação = confirm ('Deseja realmente votar neste individuo?');
                 break;
             case 8:
               prompt('Deseja REALMENTE encerrar a votação?');
