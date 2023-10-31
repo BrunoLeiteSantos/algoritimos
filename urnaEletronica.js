@@ -16,7 +16,7 @@ function urnaEletronica() {
     let senhaMesario;
     let votoInvalido;
 
-
+    let Correção;
     let MensagemdeConfirmação;
     let opcaoDeVoto1;
     let OpçãodeVoto2;
@@ -25,12 +25,18 @@ function urnaEletronica() {
     let OpçãodeVotoInvalida;
 
     console.log('Inicio do Programa');
-
     console.log('** CONFIGURAÇÃO DA URNA **');
     senhaMesario = parseInt(prompt('Defina a senha do mesário:'));
+   do{
     nomeCandidato1 = prompt('Digite o nome do candidato 1:');
     nomeCandidato2 = prompt('Digite o nome do candidato 2:');
     nomeCandidato3 = prompt('Digite o nome do candidato 3:');
+    Correção = prompt('Deseja redefinir o nome do Candidato? Digite [S] para Sim ou [N] para Não').charAt(0).toUpperCase();
+   }while(Correção === 'S');
+
+    console.log('Encerramento')
+    senhaMesario = parseInt(prompt('Defina a senha de encerramento do Mesario:'));
+
 
     do{
 
@@ -111,6 +117,6 @@ function urnaEletronica() {
         console.log('Não houve ganhador nesta urna (empate entre dois ou mais candidatos).');
     }
 
-    
+
 
 }
