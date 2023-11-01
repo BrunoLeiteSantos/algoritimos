@@ -1,10 +1,10 @@
 function urnaEletronica() {
 
-    let Voto;
-    let VotosCandidato1 = 0;
-    let VotosCandidato2 = 0;
-    let VotosCandidato3 = 0;
-    let VotosBrancos = 0;
+    let voto;
+    let votoscandidato1 = 0;
+    let votoscandidato2 = 0;
+    let votoscandidato3 = 0;
+    let votosbrancos = 0;
     let totalVotos = 0;
     let nomeGanhador;
     let votosGanhador;
@@ -14,15 +14,10 @@ function urnaEletronica() {
     let nomeCandidato3;
     let encerrarVotacao = '';
     let senhaMesario;
-    let votoInvalido;
+    let votoinvalido;
 
+    let confirmacao;
     let Correção;
-    let MensagemdeConfirmação;
-    let opcaoDeVoto1;
-    let OpçãodeVoto2;
-    let OpçãodeVoto3;
-    let OpçãodeVoto5;
-    let OpçãodeVotoInvalida;
 
     console.log('Inicio do Programa');
     console.log('** CONFIGURAÇÃO DA URNA **');
@@ -36,7 +31,6 @@ function urnaEletronica() {
 
     console.log('Encerramento')
     senhaMesario = parseInt(prompt('Defina a senha de encerramento do Mesario:'));
-
 
     do{
 
@@ -52,32 +46,36 @@ function urnaEletronica() {
 
         switch (voto) {
         case 1:
-                VotosCandidato1++;
+                votoscandidato1++;
                 console.log('O Candidato 1 recebeu um voto');
-                MensagemdeConfirmação = confirm ('Deseja realmente votar neste individuo?');
+                //confirm
+                confirmacao== prompt('Deseja realmente votar no candidato 1? Caso queira aletrar sua opção de voto digite [S] para alterar ou [N] para confirmar e prosseguir').charAt(0).toUpperCase();
+                (confirmacao === 'S');
                 break;
+
             case 2:
-                VotosCandidato2 ++;
+                votoscandidato2 ++;
                 console.log('O Candidato 2 recebeu um voto');
-                MensagemdeConfirmação = confirm ('Deseja realmente votar neste individuo?');
+                confirmacao== prompt('Deseja realmente votar no candidato 2? Caso queira aletrar sua opção de voto digite [S] para alterar ou [N] para confirmar e prosseguir').charAt(0).toUpperCase();
                 break;
+
             case 3:
-               VotosCandidato3++;
+               votoscandidato3++;
                 console.log('O Candidato 3 recebeu um voto');
-                MensagemdeConfirmação = confirm ('Deseja realmente votar neste individuo?');
+                confirmacao== prompt('Deseja realmente votar no candidato 3? Caso queira aletrar sua opção de voto digite [S] para aletar ou [N] para confirmar e prosseguir').charAt(0).toUpperCase();
                 break;
+
            case 5:
-                VotosBrancos++;
+                votosbrancos++;
                 console.log('Um voto Branco recebido');
-                MensagemdeConfirmação = confirm ('Deseja realmente votar neste individuo?');
+                confirmacao== prompt('Deseja realmente votar em Branco? Caso queira aletrar sua opção de voto digite [S] para alterar ou [N] para confirmar e prosseguir').charAt(0).toUpperCase();
                 break;
-            case 8:
-              prompt('Deseja REALMENTE encerrar a votação?');
+              case 6:
+        prompt('Deseja REALMENTE encerrar a votação?');
         default:
         return;
         }
         } while (voto !== 0);
-    
 
     console.clear();
     console.log('** BOLETIM DE URNA - RESULTADOS **');
@@ -120,3 +118,5 @@ function urnaEletronica() {
 
 
 }
+
+//async function audioConfirmacao
